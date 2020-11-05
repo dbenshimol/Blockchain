@@ -91,7 +91,8 @@ def add_transaction():
     recipient = values['recipient']
     amount = values['amount']
     signature = wallet.sign_transaction(wallet.public_key, recipient, amount)
-    success = blockchain.add_transaction(recipient, wallet.public_key, signature, amount)
+    success = blockchain.add_transaction(
+        recipient, wallet.public_key, signature, amount)
     if success:
         response = {
             'message': 'Successfully added transaction.',
